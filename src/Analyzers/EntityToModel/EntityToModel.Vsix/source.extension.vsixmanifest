@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="EntityToModel.66ad5dfc-b3ab-47dd-acf1-c029a4de30f5" Version="1.0" Language="en-US" Publisher="Jonathan Lenz"/>
+    <Identity Id="EntityToModel.66ad5dfc-b3ab-47dd-acf1-c029a4de30f5" Version="1.0" Language="en-US" Publisher="jonathan-devdeer"/>
     <DisplayName>EntityToModel</DisplayName>
     <Description xml:space="preserve">Generates model classes from EF entities in your solution.</Description>
   </Metadata>
