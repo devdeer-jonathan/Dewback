@@ -1,6 +1,7 @@
 ﻿namespace EntityToModel
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Composition;
     using System.Linq;
@@ -21,14 +22,12 @@
 
         public sealed override FixAllProvider GetFixAllProvider()
         {
-            // See https://github.com/dotnet/roslyn/blob/main/docs/analyzers/FixAllProvider.md for more information on Fix All Providers
             return WellKnownFixAllProviders.BatchFixer;
         }
 
         public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
-            var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken)
-                .ConfigureAwait(false);
+            var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
             var diagnostic = context.Diagnostics.First();
             var diagnosticSpan = diagnostic.Location.SourceSpan;
             var classDeclaration = root.FindToken(diagnosticSpan.Start)
@@ -36,6 +35,15 @@
                 .OfType<ClassDeclarationSyntax>()
                 .FirstOrDefault();
             if (classDeclaration == null)
+            {
+                return;
+            }
+            // Check if model already exists.
+            var entityName = classDeclaration.Identifier.Text;
+            var modelFileName = $"{entityName}Model.cs";
+            var solution = context.Document.Project.Solution;
+            var targetProject = solution.Projects.FirstOrDefault(p => p.Name == "Logic.Models");
+            if (targetProject != null && targetProject.Documents.Any(d => d.Name == modelFileName))
             {
                 return;
             }
@@ -58,7 +66,6 @@
             {
                 return solution;
             }
-
             var semanticModel = await document.GetSemanticModelAsync(cancellationToken);
             var classSymbol = semanticModel.GetDeclaredSymbol(classDecl, cancellationToken);
             if (classSymbol == null)
@@ -67,12 +74,11 @@
             }
             var modelClassName = $"{classSymbol.Name}Model";
             var properties = classDecl.Members.OfType<PropertyDeclarationSyntax>()
-                .Select(RemoveAttributes);
+                .Select(RemoveAttributes) as IEnumerable<MemberDeclarationSyntax>;
             var modelClass = SyntaxFactory.ClassDeclaration(modelClassName)
                 .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword))
                 .AddMembers(properties.ToArray());
-            var namespaceDecl = SyntaxFactory
-                .NamespaceDeclaration(SyntaxFactory.ParseName("Logic.Models"))
+            var namespaceDecl = SyntaxFactory.NamespaceDeclaration(SyntaxFactory.ParseName("Logic.Models"))
                 .AddMembers(modelClass);
             var newFileContent = SyntaxFactory.CompilationUnit()
                 .AddUsings(SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")))
@@ -81,7 +87,6 @@
 
             // Create a new document in the Logic.Models project
             var newDocument = targetProject.AddDocument($"{modelClassName}.cs", newFileContent.ToFullString());
-
             return newDocument.Project.Solution;
         }
 

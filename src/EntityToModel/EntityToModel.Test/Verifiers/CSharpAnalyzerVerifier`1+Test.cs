@@ -1,12 +1,16 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Testing;
-using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Testing.Verifiers;
+﻿using System;
+using System.Linq;
 
-namespace EntityToModel.Test
+namespace EntityToModel.Test.Verifiers
 {
+    using Microsoft.CodeAnalysis.CSharp.Testing;
+    using Microsoft.CodeAnalysis.Diagnostics;
+    using Microsoft.CodeAnalysis.Testing.Verifiers;
+
     public static partial class CSharpAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()
     {
+        [Obsolete("Obsolete")]
         public class Test : CSharpAnalyzerTest<TAnalyzer, MSTestVerifier>
         {
             public Test()
