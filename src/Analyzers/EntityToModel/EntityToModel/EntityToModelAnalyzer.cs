@@ -66,7 +66,8 @@
             Title,
             MessageFormat,
             Category,
-            DiagnosticSeverity.Hidden, // Hidden: no squiggle, but code fix still shows
+            // Hidden: no squiggle, but code fix still shows
+            DiagnosticSeverity.Hidden,
             true,
             Description);
 
