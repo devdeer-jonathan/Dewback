@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityToModel", "EntityToModel", "{3EF173E1-CC22-41DA-A532-A3F6443CA5AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel", "src\EntityToModel\EntityToModel\EntityToModel.csproj", "{6AF97839-4FEA-42F4-9C30-BAA55F832337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel", "src\Analyzers\EntityToModel\EntityToModel\EntityToModel.csproj", "{6AF97839-4FEA-42F4-9C30-BAA55F832337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.CodeFixes", "src\EntityToModel\EntityToModel.CodeFixes\EntityToModel.CodeFixes.csproj", "{A245F2DD-340A-494D-9F1D-B2866F4C7CCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.CodeFixes", "src\Analyzers\EntityToModel\EntityToModel.CodeFixes\EntityToModel.CodeFixes.csproj", "{A245F2DD-340A-494D-9F1D-B2866F4C7CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.Package", "src\EntityToModel\EntityToModel.Package\EntityToModel.Package.csproj", "{725C43D1-2C7C-48F5-BC82-2C7A58B24F12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.Package", "src\Analyzers\EntityToModel\EntityToModel.Package\EntityToModel.Package.csproj", "{725C43D1-2C7C-48F5-BC82-2C7A58B24F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.Vsix", "src\EntityToModel\EntityToModel.Vsix\EntityToModel.Vsix.csproj", "{37788A4A-1AF4-40D6-8EEF-BD7533916A54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityToModel.Vsix", "src\Analyzers\EntityToModel\EntityToModel.Vsix\EntityToModel.Vsix.csproj", "{37788A4A-1AF4-40D6-8EEF-BD7533916A54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
