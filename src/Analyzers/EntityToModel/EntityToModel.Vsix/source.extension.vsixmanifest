@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="EntityToModel.66ad5dfc-b3ab-47dd-acf1-c029a4de30f5" Version="1.0" Language="en-US" Publisher="jonathan-devdeer"/>
-    <DisplayName>EntityToModel</DisplayName>
-    <Description xml:space="preserve">Generates model classes from EF entities in your solution.</Description>
-  </Metadata>
-  <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="EntityToModel" Path="|EntityToModel|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="EntityToModel" Path="|EntityToModel|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="EntityToModel.CodeFixes" Path="|EntityToModel.CodeFixes|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="EntityToModel.CodeFixes" Path="|EntityToModel.CodeFixes|"/>
-  </Assets>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
-    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,)" DisplayName="Roslyn Language Services" />
-  </Prerequisites>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011"
+                 xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+	<Metadata>
+		<Identity Id="EntityToModel.66ad5dfc-b3ab-47dd-acf1-c029a4de30f5" Version="1.6" Language="en-US"
+		          Publisher="jonathan-devdeer" />
+		<DisplayName>EntityToModel</DisplayName>
+		<Description xml:space="preserve">Generates model classes from EF entities in your solution. Read more: https://github.com/devdeer-jonathan/Dewback</Description>
+	</Metadata>
+	<Installation>
+		<InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+		<InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+		<InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+	</Installation> 
+	<Dependencies>
+		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+	</Dependencies>
+	<Assets>
+		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="EntityToModel"
+		       Path="|EntityToModel|" />
+		<Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="EntityToModel" Path="|EntityToModel|" />
+		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="EntityToModel.CodeFixes"
+		       Path="|EntityToModel.CodeFixes|" />
+		<Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="EntityToModel.CodeFixes"
+		       Path="|EntityToModel.CodeFixes|" />
+	</Assets>
+	<Prerequisites>
+		<Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)"
+		              DisplayName="Visual Studio core editor" />
+		<Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[17.0,)"
+		              DisplayName="Roslyn Language Services" />
+	</Prerequisites>
 </PackageManifest>
