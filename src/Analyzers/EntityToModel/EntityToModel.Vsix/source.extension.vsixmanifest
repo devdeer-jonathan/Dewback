@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011"
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="EntityToModel.66ad5dfc-b3ab-47dd-acf1-c029a4de30f5" Version="1.6" Language="en-US"
+		<Identity Id="EntityToModel.c248cf23-3edf-4a88-89bf-ec2a585fa352" Version="1.0.0" Language="en-US"
 		          Publisher="jonathan-devdeer" />
 		<DisplayName>EntityToModel</DisplayName>
 		<Description xml:space="preserve">Generates model classes from EF entities in your solution. Read more: https://github.com/devdeer-jonathan/Dewback</Description>
@@ -11,10 +11,10 @@
 		<InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
 			<ProductArchitecture>amd64</ProductArchitecture>
 		</InstallationTarget>
-		<InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)" >
 			<ProductArchitecture>amd64</ProductArchitecture>
 		</InstallationTarget>
-		<InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+		<InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,18.0)">
 			<ProductArchitecture>amd64</ProductArchitecture>
 		</InstallationTarget>
 	</Installation> 
